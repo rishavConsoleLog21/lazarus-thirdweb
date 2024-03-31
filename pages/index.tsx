@@ -1,8 +1,11 @@
 import { ConnectWallet } from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
 import { NextPage } from "next";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home: NextPage = () => {
+
   return (
     <main className={styles.main}>
       <div className={styles.container}>
@@ -37,6 +40,10 @@ const Home: NextPage = () => {
                   height: 50,
                 },
               }}
+              onConnect={() => {
+                toast.success(`Connected to Lazarus Network!`);
+              }
+              }
             />
           </div>
         </div>
